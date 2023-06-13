@@ -1,13 +1,51 @@
-<h2>Cadastrar Aluno</h2>
+<div class="row">
+  <div class="col-8 m-auto">
+    <form [formGroup]="formGroupStudent">
+      <div class="mb-3">
+        <div class="display-6 text-center">
+          Cadastro de Alunos
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="ra" class="form-label">RA:</label>
+        <input type="number" formControlName="ra" class="form-control" id="ra" placeholder="RA">
+        <div *ngIf="submitted && ra.invalid">
+          <small class="text-danger">RA inválido!</small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome:</label>
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nome">
+        <div *ngIf="submitted && name.invalid">
+          <small class="text-danger">Nome inválido!</small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="text" formControlName="email" class="form-control" id="email" placeholder="Email">
+        <div *ngIf="submitted && email.invalid">
+          <small class="text-danger">Email inválido!</small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Telefone:</label>
+        <input type="number" formControlName="phoneNumber" class="form-control" id="phoneNumber" placeholder="Telefone">
+        <div *ngIf="submitted && phoneNumber.invalid">
+          <small class="text-danger">Telefone inválido!</small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="class" class="form-label">Turma:</label>
+        <input type="text" formControlName="class" class="form-control" id="class" placeholder="Turma">
+        <div *ngIf="submitted && class.invalid">
+          <small class="text-danger">Turma inválida!</small>
+        </div>
+      </div>
+      <div class="mb-3 d-flex justify-content-end">
+        <button class="btn btn-primary me-1" (click)="cancel()">Cancelar</button>
+        <button class="btn btn-primary" (click)="save()">Salvar</button>
+      </div>
+    </form>
 
-<form>
-  <div>
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" [(ngModel)]="student.nome">
   </div>
-  <div>
-    <label for="idade">Idade:</label>
-    <input type="number" id="idade" [(ngModel)]="student.idade">
-  </div>
-  <button (click)="cadastrarAluno()">Cadastrar</button>
-</form>
+</div>

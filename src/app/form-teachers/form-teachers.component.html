@@ -3,20 +3,43 @@
       <form [formGroup]="formGroupTeacher">
         <div class="mb-3">
           <div class="display-6 text-center p-3">Cadastro de Professores</div>
-          <label for="name" class="form-label">Nome: </label>
-          <input type="text" formControlName="name" class="form-control" id="name" placeholder="Digite seu nome completo">
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome:</label>
+          <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nome">
+          <div *ngIf="submitted && name.invalid">
+            <small class="text-danger">Nome inválido!</small>
+          </div>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email:</label>
-          <input type="email" formControlName="email" class="form-control" id="email" placeholder="Digite seu email">
+          <input type="text" formControlName="email" class="form-control" id="email" placeholder="Email">
+          <div *ngIf="submitted && email.invalid">
+            <small class="text-danger">Email inválido!</small>
+          </div>
         </div>
         <div class="mb-3">
           <label for="phoneNumber" class="form-label">Telefone:</label>
-          <input type="phoneNumber" formControlName="phoneNumber" class="form-control" id="phoneNumber" placeholder="Digite seu telefone">
+          <input type="number" formControlName="phoneNumber" class="form-control" id="phoneNumber" placeholder="Telefone">
+          <div *ngIf="submitted && phoneNumber.invalid">
+            <small class="text-danger">Telefone inválido!</small>
+          </div>
         </div>
         <div class="mb-3">
-          <label for="discipline" class="form-label">Disciplina</label>
-          <input type="text" formControlName="discipline" class="form-control" id="discipline" placeholder="Digite sua Disciplina">
+          <label for="discipline" class="form-label">Disciplina:</label>
+          <select formControlName="discipline" class="form-control" id="discipline">
+            <option value="" disabled selected>Selecione uma disciplina</option>
+            <option value="Matemática">Matemática</option>
+            <option value="Português">Português</option>
+            <option value="História">História</option>
+            <option value="Geografia">Geografia</option>
+            <option value="Biologia">Biologia</option>
+            <option value="Física">Física</option>
+            <option value="Química">Química</option>
+          </select>
+          <div *ngIf="submitted && discipline.invalid">
+            <small class="text-danger">Disciplina inválida!</small>
+          </div>
         </div>
         <div class="mb-3 d-flex justify-content-end">
           <button class="btn btn-primary me-1" (click)="save()">Salvar</button>

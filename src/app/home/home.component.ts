@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(private router : Router){
+
+  }
+
+  createStudent(){
+    this.router.navigate(['createStudent']);
+  }
+
+  createTeacher(){
+    this.router.navigate(['createTeacher']);
+  }
 }

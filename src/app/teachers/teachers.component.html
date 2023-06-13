@@ -18,8 +18,8 @@
   <tbody>
     <tr *ngFor="let teacher of teacher">
       <th scope="row">{{teacher.id}}</th>
-      <td>{{teacher.name}}</td>
-      <td>{{teacher.email}}</td>
+      <td>{{teacher.name | uppercase}}</td>
+      <td>{{teacher.email | lowercase}}</td>
       <td>{{teacher.phoneNumber}}</td>
       <td>{{teacher.discipline}}</td>
       <td>

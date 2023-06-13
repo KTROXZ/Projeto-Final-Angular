@@ -21,7 +21,7 @@ import { FormStudentComponent } from './form-student/form-student.component';
     TeachersComponent,
     FormTeachersComponent,
     StudentComponent,
-    FormStudentComponent
+    FormStudentComponent,
   ],
   imports: [
     BrowserModule,

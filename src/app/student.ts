@@ -1,4 +1,4 @@
-export interface Sudent {
+export interface Student {
     id : number;
     ra : number;
     name : string;

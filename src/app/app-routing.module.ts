@@ -8,9 +8,10 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'teachers', component: TeachersComponent },
-  { path: '', redirectTo: '/student', pathMatch: 'full' },
   { path: 'student', component: StudentComponent },
-  { path: 'student-form', component: FormStudentComponent },
+  { path: 'createStudent', component: FormStudentComponent },
+  { path: 'createTeacher', component: TeachersComponent },
+  { path: 'studentDetails/:id', component: FormStudentComponent }
 ];
 
 @NgModule({

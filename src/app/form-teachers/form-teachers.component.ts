@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges, OnChanges } from '@angular/core';
 import { Teachers } from '../teachers';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TeachersService } from '../teachers.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { TeachersService } from '../teachers.service';
   templateUrl: './form-teachers.component.html',
   styleUrls: ['./form-teachers.component.css']
 })
-export class FormTeachersComponent {
+export class FormTeachersComponent implements OnChanges {
   @Input()
   teacher: Teachers = {} as Teachers;
 
@@ -20,13 +20,17 @@ export class FormTeachersComponent {
 
   formGroupTeacher: FormGroup;
 
+  submitted: boolean = false;
+
+  disciplineOptions: string[] = ['Matemática', 'Português', 'História', 'Geografia', 'Biologia', 'Física', 'Química'];
+
   constructor(private teacherService: TeachersService, private formBuilder: FormBuilder){
     this.formGroupTeacher = formBuilder.group({
       id: [''],
-      name: [''],
-      email: [''],
-      phoneNumber: [''],
-      discipline: [''],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', [Validators.required]],
+      discipline: ['', [Validators.required]],
     })
   }
 
@@ -34,15 +38,33 @@ export class FormTeachersComponent {
     this.formGroupTeacher.setValue(this.teacher);
   }
 
-  save() {
+  save(){
+    this.submitted = true;
     if(this.formGroupTeacher.valid){
       this.saveEvent.emit(this.formGroupTeacher.value);
       this.formGroupTeacher.reset();
+      this.submitted = false;
     }
   }
 
   clean(){
     this.cleanEvent.emit();
     this.formGroupTeacher.reset();
+  }
+
+  get name(): any {
+    return this.formGroupTeacher.get("name");
+  }
+
+  get email(): any {
+    return this.formGroupTeacher.get("email");
+  }
+
+  get phoneNumber(): any {
+    return this.formGroupTeacher.get("phoneNumber");
+  }
+
+  get discipline(): any {
+    return this.formGroupTeacher.get("discipline");
   }
 }
