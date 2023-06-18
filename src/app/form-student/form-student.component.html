@@ -21,10 +21,10 @@
         </div>
       </div>
       <div class="mb-3">
-        <label for="email" class="form-label">Email:</label>
+        <label for="email" class="form-label">E-mail:</label>
         <input type="text" formControlName="email" class="form-control" id="email" placeholder="Email">
         <div *ngIf="submitted && email.invalid">
-          <small class="text-danger">Email inválido!</small>
+          <small class="text-danger">E-mail inválido!</small>
         </div>
       </div>
       <div class="mb-3">
@@ -36,9 +36,26 @@
       </div>
       <div class="mb-3">
         <label for="class" class="form-label">Turma:</label>
-        <input type="text" formControlName="class" class="form-control" id="class" placeholder="Turma">
+        <select formControlName="class" class="form-select" id="class">
+          <option value="">Selecione a Turma</option>
+          <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+          <option value="Administração">Administração</option>
+          <option value="Mecatrônica">Mecatrônica</option>
+        </select>
         <div *ngIf="submitted && class.invalid">
           <small class="text-danger">Turma inválida!</small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="series" class="form-label">Série:</label>
+        <select formControlName="series" class="form-select" id="series">
+          <option value="">Selecione a Série</option>
+          <option value="1º Série">1º Série</option>
+          <option value="2º Série">2º Série</option>
+          <option value="3º Série">3º Série</option>
+        </select>
+        <div *ngIf="submitted && series.invalid">
+          <small class="text-danger">Série inválida!</small>
         </div>
       </div>
       <div class="mb-3 d-flex justify-content-end">
@@ -46,6 +63,5 @@
         <button class="btn btn-primary" (click)="save()">Salvar</button>
       </div>
     </form>
-
   </div>
 </div>

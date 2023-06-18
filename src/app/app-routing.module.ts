@@ -6,6 +6,7 @@ import { FormStudentComponent } from './form-student/form-student.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'teachers', component: TeachersComponent },
   { path: 'student', component: StudentComponent },

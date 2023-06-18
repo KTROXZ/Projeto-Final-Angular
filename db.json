@@ -1,4 +1,54 @@
 {
-  "teachers": [],
-  "student": []
+  "teachers": [
+    {
+      "id": 1,
+      "name": "JOSIAS BARBOSA MACIEL",
+      "email": "josiasbarbosa@gmail.com",
+      "phoneNumber": 11999999999,
+      "discipline": "Português"
+    },
+    {
+      "id": 2,
+      "name": "Maria Josefa",
+      "email": "mariajosefa@gmail.com",
+      "phoneNumber": 11999999999,
+      "discipline": "História"
+    },
+    {
+      "id": 3,
+      "name": "Marcos Silva",
+      "email": "marcossilva@gmail.com",
+      "phoneNumber": 11999999999,
+      "discipline": "Matemática"
+    }
+  ],
+  "student": [
+    {
+      "id": 1,
+      "ra": 25516,
+      "name": "Maria",
+      "email": "maria@gmail.com",
+      "phoneNumber": 11999999999,
+      "class": "Administração",
+      "series": "2º Série"
+    },
+    {
+      "id": 2,
+      "ra": 1991,
+      "name": "Marcos",
+      "email": "marcos@gmail.com",
+      "phoneNumber": 11999999999,
+      "class": "Análise e Desenvolvimento de Sistemas",
+      "series": "1º Série"
+    },
+    {
+      "id": 3,
+      "ra": 5618,
+      "name": "Jose",
+      "email": "jose@gmail.com",
+      "phoneNumber": 11999999999,
+      "class": "Mecatrônica",
+      "series": "3º Série"
+    }
+  ]
 }

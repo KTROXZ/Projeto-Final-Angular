@@ -14,6 +14,9 @@ export class FormStudentComponent  implements OnInit{
   submitted: boolean = false;
   isEditing: boolean = false;
 
+  classOptions: string[] = ['Análise e Desenvolvimento de Sistemas', 'Administração', 'Mecatrônica'];
+  seriesOptions: string[] = ['1º Série', '2º Série', '3º Série'];
+
   constructor(private formBuilder: FormBuilder, private studentService: StudentService, private route: ActivatedRoute, private router: Router){
     this.formGroupStudent = formBuilder.group({
       id: [''],
@@ -22,6 +25,7 @@ export class FormStudentComponent  implements OnInit{
       email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', [Validators.required]],
       class: ['', [Validators.required]],
+      series: ['', [Validators.required]],
     });
   }
 
@@ -83,5 +87,7 @@ export class FormStudentComponent  implements OnInit{
     return this.formGroupStudent.get("class");
   }
 
-
+  get series(): any {
+    return this.formGroupStudent.get("series");
+  }
 }
