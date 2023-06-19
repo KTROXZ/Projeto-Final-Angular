@@ -17,14 +17,14 @@
       <tr *ngFor="let student of students">
         <th scope="row">{{student.id}}</th>
         <td>{{student.ra}}</td>
-        <td>{{student.name}}</td>
-        <td>{{student.email}}</td>
+        <td>{{student.name | uppercase}}</td>
+        <td>{{student.email | lowercase}}</td>
         <td>{{student.phoneNumber}}</td>
         <td>{{student.class}}</td>
         <td>{{student.series}}</td>
         <td>
           <button class="btn btn-primary me-1" (click)="edit(student)">Editar</button>
-          <button class="btn btn-primary" (click)="delete(student)">Excluir</button>
+          <button class="btn btn-danger" (click)="delete(student)">Excluir</button>
         </td>
       </tr>
     </tbody>

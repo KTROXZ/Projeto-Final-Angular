@@ -49,6 +49,15 @@
       "phoneNumber": 11999999999,
       "class": "Mecatrônica",
       "series": "3º Série"
+    },
+    {
+      "id": 4,
+      "ra": 20192,
+      "name": "Marcio",
+      "email": "marcio@gmail.com",
+      "phoneNumber": 11999999999,
+      "class": "Análise e Desenvolvimento de Sistemas",
+      "series": "3º Série"
     }
   ]
 }
